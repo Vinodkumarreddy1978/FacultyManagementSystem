@@ -1,0 +1,46 @@
+<style>
+    body
+    {
+        background-color: black;
+        }
+    table
+    {
+        background-color: rgb(6, 6, 0) ;
+        padding: 35px 20px;
+        border-color: rgb(251, 249, 249);
+        align-content: center;
+        text-align: center;
+        font-size: x-large;
+        color: whitesmoke;
+    }
+</style>
+
+
+{%extends 'home.html'%}
+{%block main%}
+
+<table border="1" align="center">
+    <th>Faculty image</th>
+    <th>Faculty Name</th>
+    <th>Faculty Subject</th>
+    <th>Faculty Experience</th>
+    <th>Faculty Age</th>
+    <th>Faculty Qualification</th>
+    <th>Faculty Email</th>
+    <th>Faculty Mobile number</th>
+    {%for i in st%}
+    <tr>
+        <td><img src="{{i.image.url}}" class="image-book-1" width=200px height=200px/></td>
+        <td>{{i.name}}</td>
+        <td>{{i.Subject}}</td>
+        <td>{{i.Experience}}</td>
+        <td>{{i.Age}}</td>
+        <td>{{i.Qualification}}</td>
+        <td>{{i.Email}}</td>
+        <td>{{i.Mobile_Number}}</td>
+    </tr>
+    {%endfor%}
+</table>
+
+{%endblock%}
+</html>

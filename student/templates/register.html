@@ -1,0 +1,79 @@
+{%extends 'home.html'%}
+{%block main%}
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+font-size:20px;
+display:block;
+}
+
+input{
+width:100%;
+font-size:15px;
+}
+button{
+background-color:rgb(55, 135, 226);
+font-size:20px;
+color:white;
+border:none;
+border-radius:10px;
+padding:10px;
+cursor:pointer;
+margin: 20px;
+text-align: center;
+}
+
+form{
+
+width:60%;
+
+border: 1px solid black;
+
+padding:20px;
+
+margin-top:50px;
+
+margin-left:20%;
+
+margin-right:20%;
+
+}
+
+button:hover
+
+{
+
+background-color:rgb(1, 44, 255);
+
+}
+    </style>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {%csrf_token%} 
+        {%for field in form%}
+                <div>
+                    <label >{{field.label}}:</label>
+                {{field}}<br>
+                {%for error in field.errors%}
+                  <font color="red">⦿{{error}}</font> <br>
+                   {%endfor%}
+                </div>
+                {%endfor%}
+        <button type="submit" >Register</button>
+    
+    </form>    
+        </div>
+    </div>
+</body>
+
+</html>
+{%endblock%}
